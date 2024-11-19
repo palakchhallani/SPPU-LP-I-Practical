@@ -1,0 +1,44 @@
+// DHT - Temp
+
+
+#include <dht.h>
+
+#define dht_apin AO          //DHT11 is connected to A0
+#define LED 13               //LED is connected to 13
+
+dht DHT;
+
+void setup()
+{
+    pinMode(LED, OUTPUT);               //LED pin set for output
+    Serial.begin(9600);                 //9600 baud rate
+    delay(1000);                        //time delay of 1000ms (1 sec)
+}
+
+void loop()
+{
+    DHT.read11(dht_apin);           //Read humidity and temperature from sensor
+    Serial.print("Current humidity = ");
+    Serial.print(DHT.humidity);
+    Serial.print("% ");
+    Serial.print("temperature = ");
+    Serialprint[(DHT.temperature);
+    Serial.println("C ");
+
+     
+    if(DTtemperature>30)
+    {
+        digitalWrite(LED, HIGH);        //LED will be on if threshold value crosses
+    }
+    else
+    {
+        digitalWrite(LED, LOW);  //LED will be off if threshold value does not cross 
+    }
+     delay[1000);
+ }
+ 
+ 
+ 
+ 
+ 
+
